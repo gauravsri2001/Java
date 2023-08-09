@@ -95,6 +95,21 @@ public class addInMiddle {
         return val;
     }
 
+    //Search in Linked List
+    public int searchInLL(int key){
+        Node temp = head;
+        int i=0;
+        while(temp!=null){
+            if(temp.data==key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        //key not found 
+        return -1;
+    }
+
     public void print(){
         if(head==null){
             System.out.println("List is empty");
@@ -113,11 +128,14 @@ public class addInMiddle {
         l1.addFirst(3);
         l1.addFirst(4);
         l1.addLast(9);
-        l1.addMiddle(2, 7);
+        //l1.addMiddle(2, 7);
 
-        l1.removeFirst();
-        l1.removeLast();
+        // l1.removeFirst();
+        // l1.removeLast();
+        
+        
         l1.print();
-        System.out.println(l1.size);
+        System.out.println(l1.searchInLL(7));
+        //System.out.println(l1.size);
     }
 }
