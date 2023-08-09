@@ -51,6 +51,50 @@ public class addInMiddle {
         temp.next = n3; 
     }
 
+    //remove element from Linked List
+
+    //remove from head
+    public int removeFirst(){
+        if(size==0){
+            System.out.println("Linked List is empty");
+            return -1;
+        }
+        else if(size==1){
+            int val = head.data;
+            head=tail=null;
+            size = 0;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    //remove from tail
+    public int removeLast(){
+        if(size==0){
+            System.out.println("Linked List is empty");
+            return -1;
+        }
+        else if(size==1){
+            int val = head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+
+        Node prev = head;
+        for(int i = 0; i<size-2; i++){
+            prev = prev.next;
+        }
+        int val = tail.data;
+        prev.next = null;
+        tail = prev;
+        size--;
+        return val;
+    }
+
     public void print(){
         if(head==null){
             System.out.println("List is empty");
@@ -70,6 +114,9 @@ public class addInMiddle {
         l1.addFirst(4);
         l1.addLast(9);
         l1.addMiddle(2, 7);
+
+        l1.removeFirst();
+        l1.removeLast();
         l1.print();
         System.out.println(l1.size);
     }
