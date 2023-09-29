@@ -3,7 +3,6 @@ public class alphabetAndNumericStackCreation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-
         Stack<Character> alpha = new Stack<>();
         Stack<Integer> num = new Stack<>();
 
@@ -13,7 +12,7 @@ public class alphabetAndNumericStackCreation {
             char c = str.charAt(i);
 
             if(Character.isDigit(c)){
-                int digit = Character.getNumericValue(c);
+                int digit = Character.getNumericValue(c);+
                 num.push(digit);
             }
             else if(Character.isAlphabetic(c)){
