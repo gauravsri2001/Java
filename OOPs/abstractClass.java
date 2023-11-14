@@ -22,6 +22,7 @@ public class abstractClass {
         //abstract method inside the abstract class
         abstract void walks();
         
+        
     }
 
     static class Dog extends Animal{
